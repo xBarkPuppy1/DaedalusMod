@@ -1,20 +1,29 @@
 ##DaedalusMod Main Configuration File
 ##If you have any questions on this configuration file, please contact Wild1145
 
+#This will enable or disable the admin info (/ai) command. If this is set to false the command will return an error, if true it will follow the continued configuration settings. 
+admininfoenabled: true
+
+#This is the messages that will appear in the command. You can have a title and up to 8 lines. Bukkit Colour codes are support along with punctuation as long as they are in single speach marks '   ' 
 admininfo:
     title: '&bHow to apply for admin on the TotalFreedom Server:'
-    line1: '&6Do not ask for admin in game'
-    line2: '&2Be helpful within the server'
-    line3: '&6Report those breaking the rules'
-    line4: '&2And apply on our forums at the link: &9www.totalfreedom.boards.net'
-    line5: This is line 5
+    line1: ' &6- Do not ask for admin in game'
+    line2: ' &2- Be helpful within the server'
+    line3: ' &6- Report those breaking the rules'
+    line4: ' &2- And apply on our forums at the link:'
+    line5: '    &9www.totalfreedom.boards.net'
     line6: This is line 6
-    
+    line7: This is line 7
+    line8: This is line 8
+  
+#This will enable and disable the differnet lines of the plugin. If you plan to disable them all (Setting them to false) please use the master command toggle above this configuration section. IF you set all these to false you will send nothing and nothing will happen... 
 aienable:
     title: true
     line1: true
     line2: true
     line3: true
     line4: true
-    line5: false
+    line5: true
     line6: false
+    line7: false
+    line8: false
