@@ -1,0 +1,6 @@
+name: DaedalusMod
+version: 1.0
+description: An add-on plugin for TotalFreedomMod
+authors: [Wild1145]
+softdepend: [Aero, TotalFreedomMod]
+main: com.superiornetworks.daedalusmod.DaedalusMod
