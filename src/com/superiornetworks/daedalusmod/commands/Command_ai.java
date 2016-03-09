@@ -50,12 +50,12 @@ public class Command_ai extends SimpleCommand<DaedalusMod>
             {
                 sender.sendMessage(ChatUtils.colorize(plugin.mainConfig.getString("admininfo.line6")));
             }
-            
+
             if (plugin.mainConfig.getBoolean("aienable.line7"))
             {
                 sender.sendMessage(ChatUtils.colorize(plugin.mainConfig.getString("admininfo.line7")));
             }
-            
+
             if (plugin.mainConfig.getBoolean("aienable.line8"))
             {
                 sender.sendMessage(ChatUtils.colorize(plugin.mainConfig.getString("admininfo.line8")));

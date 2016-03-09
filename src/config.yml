@@ -1,6 +1,9 @@
 ##DaedalusMod Main Configuration File
 ##If you have any questions on this configuration file, please contact Wild1145
 
+######## ADMIN INFO COMMAND SECTION START: ########
+
+
 #This will enable or disable the admin info (/ai) command. If this is set to false the command will return an error, if true it will follow the continued configuration settings. 
 admininfoenabled: true
 
@@ -27,3 +30,38 @@ aienable:
     line6: false
     line7: false
     line8: false
+
+
+######## ADMIN INFO COMMAND SECTION END ########
+################################################
+################################################
+######## VERIFY COMMAND SECTION START: #########
+
+#This will enable or disable the verification command (/verify) If this is set to false the command will return an error, if true it will follow the continued configuration settings. 
+verifyenabled: true
+
+#This is the messages that will appear in the command. You can have a title and up to 8 lines. Bukkit Colour codes are support along with punctuation as long as they are in single speach marks '   ' 
+verify:
+    title: '&4&lAttention: You have been flagged as an imposter, please follow these steps:'
+    line1: ' &61) Inform the admins if you plan to verify'
+    line2: ' &12) Login to the forums (Link at the bottom of this message)'
+    line3: ' &63) Post in the shoutbox (Or is Requested, PM the highest ranking admin)'
+    line4: ' &14) Wait to be verified by an admin (Telnet +)'
+    line5: '     &2&lThank you for your understanding.'
+    line6: ' &9Link: www.totalfreedom.boards.net'
+    line7: This is line 7
+    line8: This is line 8
+  
+#This will enable and disable the differnet lines of the plugin. If you plan to disable them all (Setting them to false) please use the master command toggle above this configuration section. IF you set all these to false you will send nothing and nothing will happen... 
+verenable:
+    title: true
+    line1: true
+    line2: true
+    line3: true
+    line4: true
+    line5: true
+    line6: true
+    line7: false
+    line8: false
+    
+    ######## VERIFY COMMAND SECTION END ########
