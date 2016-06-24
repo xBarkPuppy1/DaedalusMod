@@ -1,11 +1,14 @@
 package com.superiornetworks.daedalusmod;
 
 import com.superiornetworks.daedalusmod.commands.Command_ai;
+import com.superiornetworks.daedalusmod.listeners.PlayerListener;
+import com.superiornetworks.daedalusmod.modules.SignBlocker;
 import net.pravian.aero.command.handler.AeroCommandHandler;
 import net.pravian.aero.command.handler.SimpleCommandHandler;
 import net.pravian.aero.config.YamlConfig;
 import net.pravian.aero.plugin.AeroPlugin;
 import net.pravian.aero.util.Loggers;
+import org.bukkit.plugin.PluginManager;
 
 public class DaedalusMod extends AeroPlugin<DaedalusMod>
   {
@@ -17,6 +20,8 @@ public class DaedalusMod extends AeroPlugin<DaedalusMod>
     public Loggers logger;
     //
     public YamlConfig mainConfig;
+    //
+    public SignBlocker signBlocker;
 
     @Override
     public void load()
@@ -24,15 +29,19 @@ public class DaedalusMod extends AeroPlugin<DaedalusMod>
         DaedalusMod.plugin = this;
         Loggers.info("The DeadlusMod plugin has been loaded.");
         mainConfig = new YamlConfig(plugin, "config.yml");
+        signBlocker = new SignBlocker(this);
     }
 
     @Override
     public void enable()
     {
         DaedalusMod.plugin = this;
-        
+
         mainConfig.load();
-        
+
+        final PluginManager pm = plugin.getServer().getPluginManager();
+        pm.registerEvents(new PlayerListener(plugin), plugin);
+
         handler = new SimpleCommandHandler(plugin);
         handler.setCommandClassPrefix("Command_");
         handler.loadFrom(Command_ai.class.getPackage());
