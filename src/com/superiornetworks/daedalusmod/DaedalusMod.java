@@ -2,7 +2,7 @@ package com.superiornetworks.daedalusmod;
 
 import com.superiornetworks.daedalusmod.commands.Command_ai;
 import com.superiornetworks.daedalusmod.listeners.PlayerListener;
-import com.superiornetworks.daedalusmod.modules.SignBlocker;
+import com.superiornetworks.daedalusmod.modules.DaedalusModule;
 import net.pravian.aero.command.handler.AeroCommandHandler;
 import net.pravian.aero.command.handler.SimpleCommandHandler;
 import net.pravian.aero.config.YamlConfig;
@@ -21,7 +21,7 @@ public class DaedalusMod extends AeroPlugin<DaedalusMod>
     //
     public YamlConfig mainConfig;
     //
-    public SignBlocker signBlocker;
+    public DaedalusModule signBlocker;
 
     @Override
     public void load()
@@ -29,7 +29,7 @@ public class DaedalusMod extends AeroPlugin<DaedalusMod>
         DaedalusMod.plugin = this;
         Loggers.info("The DeadlusMod plugin has been loaded.");
         mainConfig = new YamlConfig(plugin, "config.yml");
-        signBlocker = new SignBlocker(this);
+        signBlocker = new DaedalusModule(this);
     }
 
     @Override
