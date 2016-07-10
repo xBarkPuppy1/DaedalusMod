@@ -84,6 +84,8 @@ chatdetector:
         command: verify
     me_admin:
         command: ai
+    me_an_admin:
+        command: ai
     
     
     

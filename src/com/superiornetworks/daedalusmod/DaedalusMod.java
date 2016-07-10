@@ -33,6 +33,7 @@ public class DaedalusMod extends AeroPlugin<DaedalusMod>
         Loggers.info("The DeadlusMod plugin has been loaded.");
         mainConfig = new YamlConfig(plugin, "config.yml");
         signBlocker = new DaedalusModule(this);
+        chatDetector = new DaedalusChatModule(this);
     }
 
     @Override

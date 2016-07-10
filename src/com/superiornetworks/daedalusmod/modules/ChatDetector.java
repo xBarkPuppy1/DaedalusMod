@@ -24,17 +24,16 @@ public class ChatDetector
     @EventHandler(priority = EventPriority.HIGH)
     public void onPlayerChat(AsyncPlayerChatEvent e)
     {
-        boolean chatDetectorEnabled = plugin.config.getBoolean("chatdetectorenabled");
-        if(chatDetectorEnabled)
+        if(plugin.mainConfig.getBoolean("chatdetectorenabled") == true)
         {
             String message = e.getMessage();
             Player player = e.getPlayer();
-            Set<String> keys = plugin.config.getConfigurationSection("chatdetector").getKeys(false);
+            Set<String> keys = plugin.mainConfig.getConfigurationSection("chatdetector").getKeys(false);
             for(final String key : keys)
             {
-                if(message.toLowerCase().contains(key)) // Example: "Give me admin"
+                if(message.toLowerCase().contains(key.replace('_',' ')))
                 {
-                    getServer().dispatchCommand(player, plugin.config.getString("chatdetector." + key + ".command"));
+                    getServer().dispatchCommand(player, plugin.mainConfig.getString("chatdetector." + key + ".command"));
                     e.setCancelled(true);
                 }
             }
