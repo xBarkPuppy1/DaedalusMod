@@ -1,14 +1,11 @@
 package com.superiornetworks.daedalusmod.modules;
 
 import com.superiornetworks.daedalusmod.DaedalusMod;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.Server;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
-import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.inventory.ItemStack;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractEvent;
 
 public class SignBlocker
   {
@@ -21,24 +18,18 @@ public class SignBlocker
         this.plugin = plugin;
         this.server = plugin.getServer();
     }
-
+    
     @EventHandler(priority = EventPriority.HIGH)
-    public void onBlockPlace(BlockPlaceEvent event)
+    public void onPlayerInteract(PlayerInteractEvent e)
     {
-        Player player = event.getPlayer();
-
+        if(e.getAction() == Action.RIGHT_CLICK_BLOCK)
         {
-            switch (event.getBlockPlaced().getType())
+            switch(e.getClickedBlock().getType())
             {
                 case SIGN:
                 case SIGN_POST:
                 {
-
-                    event.setCancelled(true);
-                    player.getInventory().setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.COOKIE, 1));
-                    player.sendMessage(ChatColor.GRAY + "For security reasons the use of Signs have been disabled");
-
-                    break;
+                    e.setCancelled(true);
                 }
             }
         }
