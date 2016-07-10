@@ -27,6 +27,7 @@ public class SignBlocker
             switch(e.getClickedBlock().getType())
             {
                 case SIGN:
+                case WALL_SIGN:
                 case SIGN_POST:
                 {
                     e.setCancelled(true);
