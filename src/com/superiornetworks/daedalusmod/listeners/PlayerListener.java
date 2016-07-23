@@ -19,7 +19,7 @@ public class PlayerListener implements Listener
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event)
     {
-        plugin.signBlocker.onPlayerInteract(event);
+        plugin.interactBlocker.onPlayerInteract(event);
     }
     
     @EventHandler

@@ -33,8 +33,17 @@ public class ChatDetector
             {
                 if(message.toLowerCase().contains(key.replace('_',' ')))
                 {
-                    getServer().dispatchCommand(player, plugin.mainConfig.getString("chatdetector." + key + ".command"));
-                    e.setCancelled(true);
+                    if(plugin.mainConfig.contains("chatdetector." + key + ".command"))
+                    {
+                         getServer().dispatchCommand(player, plugin.mainConfig.getString("chatdetector." + key + ".command"));
+                    }
+                    if(plugin.mainConfig.contains("chatdetector." + key + ".cancel"))
+                    {
+                        if(plugin.mainConfig.getBoolean("chatdetector." + key + ".cancel"))
+                        {
+                            e.setCancelled(true);
+                        }
+                    }
                 }
             }
         }

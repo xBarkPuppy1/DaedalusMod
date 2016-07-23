@@ -4,6 +4,7 @@ import com.superiornetworks.daedalusmod.commands.Command_ai;
 import com.superiornetworks.daedalusmod.listeners.PlayerListener;
 import com.superiornetworks.daedalusmod.modules.DaedalusChatModule;
 import com.superiornetworks.daedalusmod.modules.DaedalusModule;
+import com.superiornetworks.daedalusmod.modules.DaedalusRedstoneModule;
 import net.pravian.aero.command.handler.AeroCommandHandler;
 import net.pravian.aero.command.handler.SimpleCommandHandler;
 import net.pravian.aero.config.YamlConfig;
@@ -22,9 +23,11 @@ public class DaedalusMod extends AeroPlugin<DaedalusMod>
     //
     public YamlConfig mainConfig;
     //
-    public DaedalusModule signBlocker;
+    public DaedalusModule interactBlocker;
     //
     public DaedalusChatModule chatDetector;
+    //
+    //public DaedalusRedstoneModule redstoneBlocker;
 
     @Override
     public void load()
@@ -32,8 +35,9 @@ public class DaedalusMod extends AeroPlugin<DaedalusMod>
         DaedalusMod.plugin = this;
         Loggers.info("The DeadlusMod plugin has been loaded.");
         mainConfig = new YamlConfig(plugin, "config.yml");
-        signBlocker = new DaedalusModule(this);
+        interactBlocker = new DaedalusModule(this);
         chatDetector = new DaedalusChatModule(this);
+        //redstoneBlocker = new DaedalusRedstoneModule(this);
     }
 
     @Override
