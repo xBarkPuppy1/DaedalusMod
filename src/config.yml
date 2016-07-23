@@ -70,22 +70,26 @@ verenable:
     ######## CHAT DETECTOR SECTION START #######
 
 #This will enable or disable the chat detector
-chatdetectorenabled: true
+chatdetectorenabled: false
 
-#These are the messages the chatdetector will detect. Underscore ('_') will be replaced with space (' ') These messages get automatically canceled and does not show in chat.
+#These are the messages the chatdetector will detect. Underscore ('_') will be replaced with space (' ')
 chatdetector:
     #The message to search for, this can be anywhere in the message (ex. "Where do i apply for admin?" will be detected) 
     i_apply:
         #This is the command that will automagically run as the player when the message is detected.
         command: ai
+        #Set this to true if you want to cancel the chat message after sending the command.
+        cancel: true
     admins_suck:
         command: ping &cPlease do not disrespect the admins.
+        cancel: true
     i_verify:
         command: verify
+        cancel: true
     me_admin:
         command: ai
+        cancel: false
     me_an_admin:
         command: ai
-    
-    
+        cancel: false
     
