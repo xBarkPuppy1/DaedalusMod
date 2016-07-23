@@ -69,7 +69,6 @@ public class InteractBlocker
                     }
                     bookMeta.setPages(stringpages);
                     e.getPlayer().getItemInHand().setItemMeta(bookMeta);
-                    e.getPlayer().sendMessage(ChatColor.GREEN + "Succcessfully opened book.");
                 }
             }
         }
